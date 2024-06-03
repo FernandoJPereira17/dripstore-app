@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useEffect } from "react";
 import "./App.css";
 import DataTable from "./components/table/DataTable.jsx";
+import axios from "axios";
 
 
 function App() {
+
   const getProductos = async () => {
-    const URL_PRODUCTS = 'https://dripstore-api-0r61.onrender.com'
+    const URL_PRODUCTS = 'https://dripstore-api-207u.onrender.com/api/produto'
   try {
     const result = await axios.get(URL_PRODUCTS)
     console.log(result);
@@ -16,7 +16,9 @@ function App() {
   }
 };
 
-useEffect(() => {}, []);
+useEffect(() => {
+  getProductos()
+}, []);
 
   return (
     <>
