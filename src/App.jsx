@@ -6,7 +6,7 @@ import axios from "axios";
 
 function App() {
 
-  const getProductos = async () => {
+  const getProducts = async () => {
     const URL_PRODUCTS = 'https://dripstore-api-207u.onrender.com/api/produto'
   try {
     const result = await axios.get(URL_PRODUCTS)
@@ -17,7 +17,7 @@ function App() {
 };
 
 useEffect(() => {
-  getProductos()
+  getProducts()
 }, []);
 
   return (
